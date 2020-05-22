@@ -23,12 +23,9 @@
  ----->
 
 <form action="catch_file.php" method="post" enctype="multipart/form-data">
-
 <input type="file" name="upload" id="image">
 <input type="text" name="text" id="">
 <input type="submit" value="上傳">
-
-
 </form>
 
 

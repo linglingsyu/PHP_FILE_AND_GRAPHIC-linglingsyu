@@ -30,3 +30,22 @@
     text-align: center;
     font-size:32px;
 }
+
+table{
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+table td{
+    border: 1px solid #999;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    border:1px solid #ccc;
+    border-radius:15px;
+    padding:5px 15px;
+    background-color: #eee;
+}
