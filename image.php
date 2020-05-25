@@ -23,8 +23,14 @@
 <body>
 <h1 class="header">圖形處理練習</h1>
 <!---建立檔案上傳機制--->
+<form action="graphic.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="pic"><br>
+    說明<input type="text" name="text"><br>
+    相簿<input type="text" name="album"><br>
+    <input type="submit" value="上傳">
+</form>
 
-
+<a href="album.php">查看相簿</a>
 
 <!----縮放圖形----->
 
