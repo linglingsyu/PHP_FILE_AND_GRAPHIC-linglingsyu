@@ -16,11 +16,19 @@ function all($table,...$arg){
         $sql = $sql . "where". implode("&&",$tmp);
     }
 
-    //有第三個參數
+    //有第二個參數
     if(!empty($arg[1])){
         $sql=$sql . $arg[1];
     }
-    return $pdo->query($sql)->fetchALL();
+
+    //有第三個參數,指定fetch回傳的東西
+    if(!empty($arg[2])){
+        return $pdo->query($sql)->fetchALL($arg[2]);
+    }else{
+        return $pdo->query($sql)->fetchALL();
+    }
+
+
 
 }
 
@@ -83,10 +91,11 @@ function save($table,$arg){
             }
         }
         $sql = "update $table set " . implode(",",$tmp) . " where id = '".$arg['id']."' ";
-
+        // echo $sql;
     }else{
         // insert
         $sql = "insert into `$table` (`".implode("`,`",array_keys($arg))."`) values('".implode("','",$arg)."') ";
+        // echo $sql;
     }
     return $pdo->exec($sql);
 
